@@ -1,0 +1,13 @@
+{
+  "validUser": {
+    "usernameEnvKey": "USERNAME",
+    "passwordEnvKey": "PASSWORD",
+    "expectedMessage": "Congratulations student. You successfully logged in!",
+    "expectedUrl": "https://practicetestautomation.com/logged-in-successfully/"
+  },
+  "invalidUser": {
+    "username": "wronguser",
+    "password": "wrongpassword",
+    "expectedError": "Your username is invalid!"
+  }
+}
