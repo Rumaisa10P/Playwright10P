@@ -3,7 +3,7 @@ import LoginPage from '../pages/login';
 import { USERNAME } from '../Fixtures/constants';
 
 test('Locators', async ({ page }) => {
-  
+
 await page.goto("https://practicetestautomation.com/practice-test-login/");
 
 
@@ -13,7 +13,7 @@ await page.goto("https://practicetestautomation.com/practice-test-login/");
 
 // await expect(page.getByRole('textbox',{name:'username'})).toBeVisible();
 // await expect(page.getByRole('textbox',{name:'password'})).toBeVisible();
-// await expect(page.getByRole('button',{name:'Submit'})).toBeEnabled();
+// await expect(page.getByRole('button',{name:'Submit'}).toBeEnabled();
 
 //==================================================================================
 
@@ -23,7 +23,6 @@ await loginpage.enterpassword("Password123");
 await loginpage.btnclick();
 await expect(loginpage.validation).toBeVisible();
 await expect(loginpage.validation).toContainText("Your username is invalid!");
-
 
 
 

@@ -33,3 +33,42 @@ async function verifySuccessfulLogin(page: Page, expectedUrl: string, expectedMe
 async function verifyFailedLogin(page: Page, expectedError: string) {
   await expect(page.locator('#error')).toContainText(expectedError);
 }
+
+// ============================================
+// ASSIGNMENT 2: Tests Using Stored Authentication State
+// ============================================
+// These tests use the authentication saved from auth.setup.ts
+// The storageState is automatically applied, so users start as logged-in
+
+test.describe('Authenticated User Tests - Using Stored Session', () => {
+  // Apply stored authentication to all tests in this block
+  test.use({ storageState: 'playwright/.auth/authentication.json' });
+
+  test('Verify user is logged in when accessing home page', async ({ page }) => {
+    // Navigate to logged-in page - should work because we're authenticated
+    await page.goto('https://practicetestautomation.com/logged-in-successfully/');
+
+    // Verify success message (proof of being logged in)
+    const successMessage = page.locator('p.has-text-align-center');
+    await expect(successMessage).toBeVisible();
+    await expect(successMessage).toContainText('Congratulations');
+  });
+
+  test('Verify logout link is available for authenticated user', async ({ page }) => {
+    await page.goto('https://practicetestautomation.com/logged-in-successfully/');
+
+    // Check that logout link is visible
+    const logoutLink = page.getByRole('link', { name: 'Log out' });
+    await expect(logoutLink).toBeVisible();
+  });
+
+  test('Verify user can navigate within logged-in area', async ({ page }) => {
+    await page.goto('https://practicetestautomation.com/logged-in-successfully/');
+
+    // Verify correct URL
+    expect(page.url()).toContain('logged-in-successfully');
+
+    // Verify page content is accessible
+    await expect(page.locator('body')).toBeTruthy();
+  });
+});
