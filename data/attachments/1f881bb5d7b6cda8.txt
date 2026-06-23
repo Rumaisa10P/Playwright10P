@@ -1,0 +1,2 @@
+✓ Login successful for user: student
+✓ Authentication state saved to file: playwright/.auth/authentication.json
