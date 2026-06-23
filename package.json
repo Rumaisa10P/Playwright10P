@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "allure:generate": "allure generate allure-results --output allure-report --clean"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
