@@ -29,7 +29,7 @@ await expect(page.locator("#error")).toBeVisible();
 await expect(page.locator("#error")).toContainText("Your username is invalid!");
 
 });
-test.only('Test case 3: Negative password test', async ({ page }) => {
+test('Test case 3: Negative password test', async ({ page }) => {
   
 await page.goto("https://practicetestautomation.com/practice-test-login/");
 
