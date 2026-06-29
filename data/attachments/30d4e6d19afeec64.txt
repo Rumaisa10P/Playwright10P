@@ -1,0 +1,6 @@
+{
+  id: 'ff8081819d82fab6019f126a83e572c8',
+  name: 'Apple MacBook Pro 16 (Full Update)',
+  updatedAt: 1782720398688,
+  data: { year: 2023, price: 2049.99, 'CPU model': 'Apple M3 Pro' }
+}

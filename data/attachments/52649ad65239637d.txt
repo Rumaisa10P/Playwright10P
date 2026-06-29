@@ -1,0 +1,6 @@
+{
+  id: 'ff8081819d82fab6019f126a7f5d72c6',
+  name: 'Apple MacBook Pro 16 (Updated)',
+  updatedAt: 1782720397521,
+  data: { year: 2019, price: 1849.99 }
+}
