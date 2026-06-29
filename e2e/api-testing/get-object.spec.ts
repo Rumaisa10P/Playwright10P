@@ -1,31 +1,15 @@
-// import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
-
-// test('Test case 1: Positive LogIn test', async ({ page }) => {
+test('get method', async ({ request }) => {
   
-// await page.goto("https://practicetestautomation.com/practice-test-login/");
+const response = await request.get("https://api.restful-api.dev/objects");
 
+expect(response.ok()).toBeTruthy();
+expect(response.status()).toBe(200);
 
-// await page.getByRole('textbox',{name:'username'}).fill("student");
-// await page.getByRole('textbox',{name:'password'}).fill("Password123");
-// await page.getByRole('button',{name:'Submit'}).click();
+const body = await response.json();
 
-// await expect(page).toHaveURL(/practicetestautomation\.com\/logged-in-successfully\//);
-// await expect(page.locator("p.has-text-align-center")).toContainText("Congratulations student. You successfully logged in!");
-// await expect(page.getByRole('link',{name:'Log out'})).toBeVisible();
+console.log(body);
 
-// });
-
-// test('get method', async ({ request }) => {
-  
-// const response = await request.get("https://api.restful-api.dev/objects");
-
-// expect(response.ok()).toBeTruthy();
-// expect(response.status()).toBe(200);
-
-// const body = await response.json();
-
-// console.log(body);
-
-// });
+});
 
